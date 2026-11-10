@@ -6,7 +6,7 @@
 <title>Healing in Cubes</title>
 <meta name="description" content="A seven-day guided imagery experiment built from abstract cube forms.">
 <style>
-:root{--bg:#1f2321;--panel:#262b28;--grid:#59605b;--healthy:#9da88e;--healthy-wash:rgba(157,168,142,.07);--cleared:#303a32;--pause-ink:#b6c09f;--bad:#7b3734;--bad2:#8b403b;--ivory:#ece8dc;--ink:#efeee8;--muted:#a4aaa4;--red:#df5b4d}
+:root{--bg:#1f2321;--panel:#262b28;--grid:#59605b;--healthy:#b9c3a4;--bad:#7b3734;--bad2:#8b403b;--ivory:#ece8dc;--ink:#efeee8;--muted:#a4aaa4;--red:#df5b4d}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:var(--bg);color:var(--ink)}
 body{font-family:Arial,Helvetica,sans-serif}
 button,a{font:inherit}.hidden{display:none!important}
@@ -16,7 +16,7 @@ button,a{font:inherit}.hidden{display:none!important}
 h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(34px,6vw,54px);line-height:1;margin:0 0 18px}
 .card p{font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.62;color:#d0d3cc;margin:0 0 15px}
 .rules{border-top:1px solid rgba(255,255,255,.12);margin-top:22px;padding-top:19px;font-size:14px;line-height:1.65;color:#b5bab4}
-.science{margin-top:20px;padding:16px 18px;border-left:2px solid var(--healthy);background:var(--healthy-wash);font-size:13px;line-height:1.6;color:#b9beb8}
+.science{margin-top:20px;padding:16px 18px;border-left:2px solid var(--healthy);background:rgba(185,195,164,.05);font-size:13px;line-height:1.6;color:#b9beb8}
 .disclaimer{font-size:12px!important;color:#8f948f!important;margin-top:18px!important}
 .primary{margin-top:20px;width:100%;border:0;background:var(--ivory);color:#222624;padding:14px 16px;cursor:pointer}
 .mothership{display:block;text-align:center;margin-top:18px;color:#aaa;text-decoration:none;font-size:12px}.mothership span{color:var(--red)}
@@ -28,16 +28,15 @@ h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(3
 .cell.bad{background:var(--bad);cursor:pointer;animation:hesitate 2.4s ease-in-out infinite}
 .cell.bad:nth-child(3n){animation-delay:.22s}.cell.bad:nth-child(5n){animation-delay:.47s}.cell.bad:nth-child(7n){animation-delay:.71s}
 .cell.clearing{animation:none;transform:scale(.78);opacity:.15;transition:transform .28s ease,opacity .28s ease}
-.cell.cleared{background:var(--cleared);opacity:.9}
+.cell.cleared{background:#334038;opacity:.9}
 @keyframes hesitate{0%,82%,100%{opacity:.92;transform:scale(1)}87%{opacity:.72;transform:scale(.985)}91%{opacity:.96;transform:scale(1.01)}95%{opacity:.82;transform:scale(.995)}}
 .controls{width:min(720px,94vw);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
 .quote{font-family:Georgia,'Times New Roman',serif;font-size:14px;font-style:italic;color:#aeb5ab;line-height:1.45}
 .next{justify-self:end;border:1px solid rgba(255,255,255,.28);background:transparent;color:var(--ink);padding:10px 18px;cursor:pointer;min-width:98px}
 .next:disabled{opacity:.28;cursor:default}
 .counter{font:11px ui-monospace,monospace;color:#8e958f;letter-spacing:.12em}
-.pause{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity .45s ease;background:rgba(31,35,33,.18);font-family:Georgia,'Times New Roman',serif;font-style:italic;color:var(--pause-ink)}
+.pause{position:fixed;inset:0;display:grid;place-items:center;pointer-events:none;opacity:0;transition:opacity .45s ease;background:rgba(31,35,33,.18);font-family:Georgia,'Times New Roman',serif;font-style:italic;color:#c7cfbd}
 .pause.show{opacity:1}
-.palette-picker{margin:17px 0 4px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12)}.palette-title{font:10px ui-monospace,monospace;letter-spacing:.14em;color:var(--muted);margin-bottom:9px}.palette-options{display:flex;flex-wrap:wrap;gap:7px}.palette-button{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(255,255,255,.18);border-radius:999px;background:transparent;color:#d0d3cc;padding:7px 10px;font:12px Arial,Helvetica,sans-serif;cursor:pointer}.palette-button[aria-pressed=true]{border-color:var(--healthy);background:rgba(255,255,255,.035);color:var(--ink)}.palette-chip{width:12px;height:12px;border-radius:50%;background:var(--chip)}.palette-button:focus-visible{outline:2px solid var(--healthy);outline-offset:2px}.palette-note{font:10px ui-monospace,monospace;color:var(--muted);margin-top:8px}.welcome{overflow-y:auto}
 @media(max-width:620px){.card{padding:26px 22px}.grid{width:min(92vw,520px);gap:3px;padding:3px}.controls{grid-template-columns:1fr auto}.quote{grid-column:1 / 3;grid-row:2}.counter{display:none}}
 
 </style>
@@ -52,11 +51,6 @@ h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(3
     <div class="rules"><strong>Return once a day for seven consecutive days.</strong><br>You may clear one image or all twenty. The number does not matter. Participation does.</div>
     <div class="science"><strong>Why visualization?</strong><br>Guided imagery is commonly used as a relaxation and attention practice. This experiment uses that same idea: focused attention, a deliberate inner image, and a simple physical action. It does not claim to alter disease or replace medical care.</div>
     <p class="disclaimer">For reflection only. The forms are symbolic, not medical images. This does not diagnose, treat, remove, or cure disease and is not a substitute for medical care.</p>
-    <div class="palette-picker" role="group" aria-label="Choose a visualization color">
-      <div class="palette-title">VISUALIZATION COLOR</div>
-      <div class="palette-options"><button class="palette-button" type="button" data-palette="sage" aria-pressed="true"><span class="palette-chip" style="--chip:#9da88e"></span>Sage</button><button class="palette-button" type="button" data-palette="ocean" aria-pressed="false"><span class="palette-chip" style="--chip:#8faeb6"></span>Ocean</button><button class="palette-button" type="button" data-palette="amber" aria-pressed="false"><span class="palette-chip" style="--chip:#c3a574"></span>Amber</button></div>
-      <div class="palette-note">Your choice is saved on this device.</div>
-    </div>
     <button id="begin" class="primary">Begin today's visualization</button>
     <a class="mothership" href="https://uselessinstruments.com" target="_blank" rel="noopener">Useless Instruments <span>↗</span></a>
 
@@ -76,8 +70,6 @@ h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(3
 
 <script>
 (() => {
-const palettes={sage:{accent:'#9da88e',wash:'rgba(157,168,142,.07)',cleared:'#303a32',pause:'#b6c09f'},ocean:{accent:'#8faeb6',wash:'rgba(143,174,182,.07)',cleared:'#2d393c',pause:'#afc2c7'},amber:{accent:'#c3a574',wash:'rgba(195,165,116,.07)',cleared:'#3c3529',pause:'#c8b58e'}};
-function applyPalette(name,save=false){const p=palettes[name]||palettes.sage;const root=document.documentElement;root.style.setProperty('--healthy',p.accent);root.style.setProperty('--healthy-wash',p.wash);root.style.setProperty('--cleared',p.cleared);root.style.setProperty('--pause-ink',p.pause);document.querySelectorAll('[data-palette]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.palette===name)));if(save)localStorage.setItem('hic_palette',name)}
 const N=17;
 const quotes=[
   'Imagine less resistance, not more force.',
@@ -141,8 +133,6 @@ function progress(){
   return {today,day};
 }
 const p=progress();
-applyPalette(localStorage.getItem('hic_palette')||'sage');
-document.querySelectorAll('[data-palette]').forEach(b=>{b.onclick=()=>applyPalette(b.dataset.palette,true)});
 
 function markParticipation(){
   localStorage.setItem('hic_last',p.today);
